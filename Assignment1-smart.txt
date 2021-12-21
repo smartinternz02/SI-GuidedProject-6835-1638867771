@@ -1,0 +1,178 @@
+1. What is 7 to the power of 4?
+code:
+print(pow(7,4))
+output:
+2401
+
+2.  Split this string into a list. 
+    s = "Hi there Sam!"
+
+code:
+str="hi there Sam"
+l=str.split()
+print(l)
+
+output:
+['hi', 'there', 'Sam']
+
+
+3.Given the variables
+    planet = "Earth"
+    diameter = 12742
+Use .format() to print the following string
+The diameter of Earth is 12742 kilometers.
+
+code:
+
+planet="Earth"
+diameter=12742
+str="The diameter of {} is {} kilometers"
+print(str.format(planet,diameter))
+
+output:
+
+The diameter of Earth is 12742 kilometers
+
+
+4.Given this nested list, use indexing to grab the word "hello
+    lst = [1,2,[3,4],[5,[100,200,['hello']],23,11],1,7]
+
+code:
+
+lst=[1,2,[3,4],[5,[100,200,['hello']],23,11],1,7]
+print(lst[3][1][2][0])
+
+output:
+hello
+
+5. Given this nested dictionary grab the word "hello". Be prepared, this will be annoying/tricky
+    d = {'k1':[1,2,3,{'tricky':['oh','man','inception',{'target':[1,2,3,'hello']}]}]}
+
+
+code:
+
+d = {'k1':[1,2,3,{'tricky':['oh','man','inception',{'target':[1,2,3,'hello']}]}]}
+print(d['k1'][3]['tricky'][3]['target'][3])
+
+output:
+
+hello
+
+
+6.What is the main difference between a tuple and a list?
+Lists are mutable
+
+LIST
+
+Implication of iterations is Time-consuming
+The list is better for performing operations, such as insertion and deletion
+Lists consume more memory
+Lists have several built-in methods
+The unexpected changes and errors are more likely to occur
+    
+TUPLE
+    
+Tuples are immutable.
+The implication of iterations is comparatively Faster.
+Tuple data type is appropriate for accessing the elements.
+Tuple consume less memory as compared to the list.
+Tuple does not have many built-in methods.
+In tuple, it is hard to take place.
+
+7.Create a function that grabs the email website domain from a string in the form : user@domain.com
+    So for example, passing "user@domain.com" would return: domain.com
+
+code:
+def domainGet(email):
+   print("Your domain is: " + email.split('@')[-1])
+
+email = input("Please enter your email: >")
+domainGet(email)
+
+output:
+
+Please enter your email: >amrithraj97@gmail.com
+Your domain is: gmail.com
+
+8. Create a basic function that returns True if the word 'dog' is contained in the input string. 
+    Don't worry about edge cases like a punctuation being attached to the word dog, but do account for capitalization.
+
+code:
+
+def findDog(st):
+    if 'dog' in st.lower():
+        print("True")
+    else:
+        print("False")
+
+st = input("Please key a string: >")
+findDog(st)
+
+output
+
+Please key a string: >dog
+true
+
+Please key a string: >cat
+False
+
+9. Use lambda expressions and the filter() function to filter out words from a list that don't start with the letter 's'.
+    For example:
+    seq = ['soup','dog','salad','cat','great']
+    should be filtered down to:    ['soup','salad']
+
+cocde:
+
+seq = ['soup','dog','salad','cat','great']
+list(filter(lambda word: word[0]=='s',seq))
+
+ouput:
+['soup', 'salad']
+
+
+
+10. You are driving a little too fast, and a police officer stops you. Write a function
+      to return one of 3 possible results: "No ticket", "Small ticket", or "Big Ticket". 
+      If your speed is 60 or less, the result is "No Ticket". If speed is between 61 
+      and 80 inclusive, the result is "Small Ticket". If speed is 81 or more, the result is "Big    Ticket".
+     Unless it is your birthday (encoded as a boolean value in the parameters of the function) --
+     on your birthday, your speed can be 5 higher in all cases. 
+
+code:
+
+print("Please enter the speed(km/h)(only number please):")
+speed = int(input("> "))
+
+print("Please enter your birthday: (in DD/MM/YYYY format)")
+birthday = str(input(">"))
+
+def speeding(speed, birthday):
+    if birthday == '29/08/1989':
+        s = speed - 5
+    else:
+        s = speed
+
+    if s <= 60:
+        print("You pass.")
+    elif s > 61 and s <= 80:
+        print("You get a small ticket")
+    else:
+        print("You get a big ticket.")
+
+speeding(speed, birthday)
+
+output:
+
+Please enter the speed(km/h)(only number please):
+> 80
+Please enter your birthday: (in DD/MM/YYYY format)
+>24/03/1994
+You get a small ticket
+
+
+Please enter the speed(km/h)(only number please):
+> 60
+Please enter your birthday: (in DD/MM/YYYY format)
+>12/03/1967
+You pass.
+    
